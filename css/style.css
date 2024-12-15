@@ -5,65 +5,77 @@
          url('../fonts/clockicons.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-  }
+}
 
-  /* General Body Styling */
-  body {
+@font-face {
+    font-family: 'Orbitron';
+    src: url('../fonts/Orbitron-Regular.woff2') format('woff2'),
+         url('../fonts/Orbitron-Regular.woff') format('woff'),
+         url('../fonts/Orbitron-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* General Body Styling */
+body {
     font-family: Arial, sans-serif;
     background-color: #000;
     color: #fff;
     text-align: center;
     margin: 0;
     padding: 0;
-  }
-  
-  /* Timer Display */
-  #timer {
+}
+
+/* Timer Display */
+#timer {
     font-family: 'clockicons', sans-serif; /* Use the clockicons font */
-    font-size:250px;
-    color: orange;
+    font-size: 350px;
+    color: orange; /* Default color */
     margin: 50px 0;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  /* Buttons Styling */
-  button {
+    transition: color 0.5s, text-shadow 0.5s; /* Add transition for smooth color and shadow change */
+}
+
+#timer.red {
+    color: red; /* Change color to red when remaining time is less than 60 seconds */
+}
+
+/* Buttons Styling */
+button {
+    font-family: 'Orbitron', sans-serif; /* Cinematic font for buttons */
     padding: 10px 20px;
     margin: 10px;
     font-size: 20px;
     border: none;
     cursor: pointer;
-    color: white;
-  }
-  
-  .edit {
-    background-color: #2196f3;
-  }
-  
-  .reset {
-    background-color: #aa6f00;
-  }
-  
-  .start {
-    background-color: #4caf50;
-  }
-  
-  .pause {
-    background-color: #f44336;
-  }
-  
-  .save {
-    background-color: #4caf50;
-  }
-  
-  button:hover {
+    color: rgb(219, 214, 214);
+    border-radius: 20px;
+}
+
+.edit {
+    background-color: #2195f346;
+}
+
+.reset {
+    background-color: #aa6f0073;
+}
+
+.start {
+    background-color: #4caf4f88;
+}
+
+.pause {
+    background-color: #f4433659;
+}
+
+button:hover {
     opacity: 0.8;
-  }
-  
-  /* Modal Styling */
-  .modal {
+}
+
+/* Modal Styling */
+.modal {
     display: none;
     position: fixed;
     top: 0;
@@ -72,38 +84,38 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 1000;
-  }
-  
-  .modal-content {
+}
+
+.modal-content {
     background-color: #333;
     padding: 20px;
     width: 50%;
     margin: 10% auto;
     color: white;
     border-radius: 10px;
-  }
-  
-  .close {
+}
+
+.close {
     color: white;
     font-size: 30px;
     float: right;
     cursor: pointer;
-  }
-  
-  .edit-fields {
+}
+
+.edit-fields {
     display: flex;
     justify-content: space-between;
     margin: 20px 0;
-  }
-  
-  .edit-fields label,
-  .edit-fields input {
+}
+
+.edit-fields label,
+.edit-fields input {
     display: block;
     margin: 10px;
     text-align: left;
-  }
-  
-  input[type="number"] {
+}
+
+input[type="number"] {
     width: 60px;
     padding: 5px;
     font-size: 18px;
@@ -112,27 +124,31 @@
     color: white;
     border: none;
     border-radius: 5px;
-  }
-  
-  .modal-buttons {
+}
+
+.modal-buttons {
     display: flex;
     justify-content: space-around;
-  }
+}
 
-  /* Header Styling */
-  .highhead {
+.modal-buttons button {
+    width: 30%; /* Distribute buttons in modal evenly */
+}
+
+/* Header Styling */
+.highhead {
     font-family: 'Orbitron', sans-serif; /* Robotic font */
     font-size: 70px; /* Adjust size for prominence */
     text-transform: uppercase; /* Ensure all caps */
     color: #f9f9f9; /* Neutral white text */
-    background: linear-gradient(90deg, #6ee6eb, #021822);
+    background: linear-gradient(90deg, #10777a, #750404);
     background-position: center; /* Position the gradient in the center */
     text-align: center;
     margin-top: 10px;
     padding: 40px; /* Add padding to adjust height */
     border-radius: 10px; /* Optional: add rounded corners */
     height: 80px;
-} 
+}
 
 /* Media Queries for responsive design */
 @media screen and (max-width: 1200px) {
@@ -150,7 +166,7 @@
     }
 
     button {
-        width: 80%;
+        width: 80%; /* Buttons take up more space */
     }
 }
 
@@ -160,7 +176,7 @@
     }
 
     .highhead {
-        font-size: 50px;
+        font-size: 50px; /* Adjust header size */
         padding: 20px;
     }
 
@@ -174,27 +190,27 @@
     }
 
     input[type="number"] {
-        width: 80%; /* Take full width for better usability */
+        width: 80%; /* Full width for better usability */
     }
 
     button {
-        width: 90%; /* Increase button width for better touch compatibility */
+        width: 90%; /* Button width for tablets and smaller screens */
         margin: 10px auto;
     }
 }
 
 @media screen and (max-width: 600px) {
     #timer {
-        font-size: 100px; /* Adjust font size for smaller screens */
+        font-size: 100px; /* Adjust font size for smartphones */
     }
 
     .highhead {
         font-size: 40px; /* Adjust header size */
-        padding: 20px; /* Reduce padding for small screens */
+        padding: 20px;
     }
 
     .modal-content {
-        width: 90%; /* Take full width for smartphones */
+        width: 90%; /* Full width for smartphones */
     }
 
     .edit-fields {
@@ -203,7 +219,7 @@
     }
 
     input[type="number"] {
-        width: 80%; /* Take full width for small screens */
+        width: 80%; /* Full width for small screens */
     }
 
     button {

@@ -10,6 +10,12 @@ function displayTime(seconds) {
   const minutes = String(Math.floor(seconds / 60)).padStart(2, '0');
   const secs = String(seconds % 60).padStart(2, '0');
   timerDisplay.textContent = `${minutes}:${secs}`;
+
+  if (remainingTime <= 60) {
+    timerDisplay.classList.add('red'); // Add red styling for last minute
+  } else {
+    timerDisplay.classList.remove('red'); // Remove red styling when more than 1 minute
+  }
 }
 
 // Start Timer
@@ -22,7 +28,7 @@ function startTimer() {
       displayTime(remainingTime);
     } else {
       clearInterval(countdown);
-      alert("Time's up!");
+      // Remove alert or add custom behavior here if needed
     }
   }, 1000);
 }
