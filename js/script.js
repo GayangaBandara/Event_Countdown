@@ -37,7 +37,7 @@ function startTimer() {
       displayTime(remainingTime);
 
       // Play sound during the last 5 seconds
-      if (remainingTime === 5) {
+      if (remainingTime === 10) {
         const endSound = document.getElementById("endSound");
         endSound.play();
       }

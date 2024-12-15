@@ -14,11 +14,7 @@
     <img src="image/logo.png" class="logo-right" alt="Right Logo">
   </div>
 
-  <div id="timer">03:00</div>
-  <button class="edit" onclick="openEditModal()">*</button>
-  <button class="reset" onclick="resetTimer()">*</button>
-  <button class="start" onclick="startTimer()">*</button>
-  <button class="pause" onclick="pauseTimer()">*</button>
+  <div id="timer">03:00</div><br><br>
 
   <div class="my-slider-container">
     <div class="monoslider" style="
@@ -51,9 +47,17 @@
             <div class="monoitem" style="--position: 8">
                 <img src="image/sltlg.png" alt="" style="margin-top: -4px; height: 70px;" width="100px">
             </div>
-        </div>
+        </div><br><br><br><br><br><br>
+        <button class="edit" onclick="openEditModal()">*</button>
+        <button class="reset" onclick="resetTimer()">*</button>
+        <button class="start" onclick="startTimer()">*</button>
+        <button class="pause" onclick="pauseTimer()">*</button>
     </div>
+
     </div>
+
+
+
 
   <!-- Edit Timer Modal -->
   <div id="editModal" class="modal">
@@ -76,7 +80,7 @@
       </div>
     </div>
   </div>
-  <audio id="endSound" src="audio/5Sec.mp3" preload="auto"></audio>
+  <audio id="endSound" src="audio/10Sec.mp3" preload="auto"></audio>
   <script src="js/script.js"></script>
  
  <script>
@@ -114,6 +118,7 @@
 .monoslider .mono .monoitem img {
     width: 100%; /* Make images responsive */
     object-fit: contain; /* Maintain aspect ratio */
+    opacity: 30%;
 }
 @keyframes autoRun {
     from {
