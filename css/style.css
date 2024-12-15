@@ -7,16 +7,6 @@
     font-style: normal;
   }
 
-  /* Font Definition for Robotic Look */
-@font-face {
-    font-family: 'TechFont';
-    src: url('../fonts/techfont.woff2') format('woff2'),
-         url('../fonts/techfont.woff') format('woff'),
-         url('../fonts/techfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
   /* General Body Styling */
   body {
     font-family: Arial, sans-serif;
@@ -131,15 +121,15 @@
 
   /* Header Styling */
   .highhead {
-    font-family: 'TechFont', sans-serif; /* Robotic font */
-    font-size: 80px; /* Adjust size for prominence */
+    font-family: 'Orbitron', sans-serif; /* Robotic font */
+    font-size: 60px; /* Adjust size for prominence */
     text-transform: uppercase; /* Ensure all caps */
     color: #f9f9f9; /* Neutral white text */
     background: linear-gradient(90deg, #6ee6eb, #021822);
     background-position: center; /* Position the gradient in the center */
     text-align: center;
-    margin-top: 30px;
+    margin-top: 10px;
     padding: 40px; /* Add padding to adjust height */
     border-radius: 10px; /* Optional: add rounded corners */
-    height: 40px;
+    height: 60px;
 } 
