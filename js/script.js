@@ -12,10 +12,18 @@ function displayTime(seconds) {
   const secs = String(seconds % 60).padStart(2, '0');
   timerDisplay.textContent = `${minutes}:${secs}`;
 
-  if (remainingTime <= 60) {
-    timerDisplay.classList.add('red'); // Add red styling for last minute
+  // Adjust color coding based on the remaining time
+  if (remainingTime > 70) {
+    timerDisplay.classList.remove('red', 'yellow');
+  } else if (remainingTime > 60) {
+    timerDisplay.classList.add('red');
+    timerDisplay.classList.remove('yellow');
+  } else if (remainingTime > 10) {
+    timerDisplay.classList.add('yellow');
+    timerDisplay.classList.remove('red');
   } else {
-    timerDisplay.classList.remove('red'); // Remove red styling when more than 1 minute
+    timerDisplay.classList.add('red');
+    timerDisplay.classList.remove('yellow');
   }
 }
 

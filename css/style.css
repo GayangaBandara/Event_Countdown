@@ -83,7 +83,7 @@ button {
     margin: 10px;
     border: none;
     cursor: pointer;
-    color: rgb(228, 228, 228);
+    color: rgb(204, 201, 201);
     border-radius: 10px;
     letter-spacing: 2px;
 }
@@ -93,15 +93,15 @@ button {
 }
 
 .reset {
-    background-color: #aa6f0073;
+    background-color: #2195f346;
 }
 
 .start {
-    background-color: #4caf4f88;
+    background-color: #2195f346;
 }
 
 .pause {
-    background-color: #f4433659;
+    background-color: #2195f346;
 }
 
 .save {
