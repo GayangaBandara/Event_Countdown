@@ -36,10 +36,12 @@ function startTimer() {
       remainingTime--;
       displayTime(remainingTime);
 
-      // Play sound during the last 5 seconds
-      if (remainingTime === 10) {
+      // Play sound during the last 10 seconds
+      if (remainingTime <= 10) {
         const endSound = document.getElementById("endSound");
-        endSound.play();
+        if (endSound.paused) {
+          endSound.play();
+        }
       }
     } else {
       clearInterval(countdown);
@@ -50,13 +52,25 @@ function startTimer() {
 // Pause Timer
 function pauseTimer() {
   const pauseButton = document.querySelector(".pause");
+  const endSound = document.getElementById("endSound");
   if (!isPaused) {
     clearInterval(countdown);
     isPaused = true;
     pauseButton.textContent = "*";
+
+    // Pause the sound if it's playing
+    if (!endSound.paused) {
+      endSound.pause();
+    }
   } else {
+    isPaused = false;
     startTimer();
     pauseButton.textContent = "*";
+
+    // Resume the sound if it's during the last 10 seconds
+    if (remainingTime <= 10) {
+      endSound.play();
+    }
   }
 }
 
