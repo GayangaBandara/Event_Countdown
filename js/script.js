@@ -53,10 +53,10 @@ function pauseTimer() {
   if (!isPaused) {
     clearInterval(countdown);
     isPaused = true;
-    pauseButton.textContent = "Resume";
+    pauseButton.textContent = "*";
   } else {
     startTimer();
-    pauseButton.textContent = "Pause";
+    pauseButton.textContent = "*";
   }
 }
 
@@ -65,7 +65,7 @@ function resetTimer() {
   clearInterval(countdown);
   remainingTime = totalTime = 180; // Reset to 3 minutes
   displayTime(totalTime);
-  document.querySelector(".pause").textContent = "Pause";
+  document.querySelector(".pause").textContent = "*";
   isPaused = false;
 
   // Stop and reset the music
