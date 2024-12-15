@@ -20,7 +20,7 @@
   /* Timer Display */
   #timer {
     font-family: 'clockicons', sans-serif; /* Use the clockicons font */
-    font-size: 100px;
+    font-size:250px;
     color: orange;
     margin: 50px 0;
     display: flex;
@@ -122,8 +122,7 @@
   /* Header Styling */
   .highhead {
     font-family: 'Orbitron', sans-serif; /* Robotic font */
-    font-size: 60px; /* Adjust size for prominence */
-    font-size: 80px; /* Adjust size for prominence */
+    font-size: 70px; /* Adjust size for prominence */
     text-transform: uppercase; /* Ensure all caps */
     color: #f9f9f9; /* Neutral white text */
     background: linear-gradient(90deg, #6ee6eb, #021822);
@@ -132,5 +131,83 @@
     margin-top: 10px;
     padding: 40px; /* Add padding to adjust height */
     border-radius: 10px; /* Optional: add rounded corners */
-    height: 60px;
+    height: 80px;
 } 
+
+/* Media Queries for responsive design */
+@media screen and (max-width: 1200px) {
+    #timer {
+        font-size: 180px; /* Adjust font size for larger screens */
+    }
+
+    .highhead {
+        font-size: 60px; /* Adjust header size */
+        padding: 30px;
+    }
+
+    .modal-content {
+        width: 70%; /* Slightly reduce modal width */
+    }
+
+    button {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #timer {
+        font-size: 120px; /* Adjust font size for tablets */
+    }
+
+    .highhead {
+        font-size: 50px;
+        padding: 20px;
+    }
+
+    .modal-content {
+        width: 80%; /* Take full width for tablets */
+    }
+
+    .edit-fields {
+        flex-direction: column; /* Stack inputs vertically */
+        align-items: center;
+    }
+
+    input[type="number"] {
+        width: 80%; /* Take full width for better usability */
+    }
+
+    button {
+        width: 90%; /* Increase button width for better touch compatibility */
+        margin: 10px auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #timer {
+        font-size: 100px; /* Adjust font size for smaller screens */
+    }
+
+    .highhead {
+        font-size: 40px; /* Adjust header size */
+        padding: 20px; /* Reduce padding for small screens */
+    }
+
+    .modal-content {
+        width: 90%; /* Take full width for smartphones */
+    }
+
+    .edit-fields {
+        flex-direction: column; /* Stack inputs vertically */
+        align-items: center;
+    }
+
+    input[type="number"] {
+        width: 80%; /* Take full width for small screens */
+    }
+
+    button {
+        width: 80%; /* Adjust button width for small screens */
+        margin: 10px auto;
+    }
+}
