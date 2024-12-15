@@ -85,6 +85,7 @@ button {
     cursor: pointer;
     color: rgb(228, 228, 228);
     border-radius: 10px;
+    letter-spacing: 2px;
 }
 
 .edit {
@@ -188,6 +189,7 @@ input[type="number"] {
     height: 80px;
     position: relative; /* To position the pseudo-element */
     overflow: hidden; /* Clip any excess animation */
+    letter-spacing: 3px;
 }
 
 /* Create Animated Outline Effect */
