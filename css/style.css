@@ -173,19 +173,52 @@ input[type="number"] {
 }
 
 /* Header Styling */
+/* Header Styling with Animated Background Box */
 .highhead {
     font-family: 'Orbitron', sans-serif; /* Robotic font */
     font-size: 70px; /* Adjust size for prominence */
     text-transform: uppercase; /* Ensure all caps */
     color: #f9f9f9; /* Neutral white text */
-    background: linear-gradient(90deg, #10777a, #750404);
+    background: linear-gradient(90deg, #10767a49, #75040441);
     background-position: center; /* Position the gradient in the center */
     text-align: center;
     margin-top: 10px;
     padding: 40px; /* Add padding to adjust height */
     border-radius: 10px; /* Optional: add rounded corners */
     height: 80px;
+    position: relative; /* To position the pseudo-element */
+    overflow: hidden; /* Clip any excess animation */
 }
+
+/* Create Animated Outline Effect */
+.highhead::before {
+    content: ''; /* Empty content for pseudo-element */
+    position: absolute; /* Positioned relative to .highhead */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px; /* Match the border radius of .highhead */
+    background: linear-gradient(90deg, #c53f3f11, #00ff0017, #0000ff34, #ff00003b); /* Rainbow-like gradient */
+    background-size: 300% 300%; /* Create a large gradient for animation */
+    animation: animate-outline 4s linear infinite; /* Infinite animation loop */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.63); /* Add glow effect */
+    
+}
+
+/* Keyframes for Gradient Animation */
+@keyframes animate-outline {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 
 /* Media Queries for responsive design */
 @media screen and (max-width: 1200px) {
