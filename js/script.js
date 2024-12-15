@@ -1,3 +1,4 @@
+// Timer Elements
 let timerDisplay = document.getElementById("timer");
 let countdown;
 let totalTime = 180; // Default time: 3 minutes
@@ -28,9 +29,15 @@ function startTimer() {
       displayTime(remainingTime);
     } else {
       clearInterval(countdown);
-      // Remove alert or add custom behavior here if needed
+      playEndSound(); // Play the sound when the timer ends
     }
   }, 1000);
+}
+
+// Play Sound on Timer End
+function playEndSound() {
+  const endSound = document.getElementById("endSound");
+  endSound.play();
 }
 
 // Pause Timer
@@ -53,6 +60,11 @@ function resetTimer() {
   displayTime(totalTime);
   document.querySelector(".pause").textContent = "Pause";
   isPaused = false;
+
+  // Stop and reset the music
+  const endSound = document.getElementById("endSound");
+  endSound.pause(); // Pause the audio
+  endSound.currentTime = 0; // Reset playback to the beginning
 }
 
 // Open Edit Modal
@@ -71,7 +83,7 @@ function saveEdit() {
   const minutes = parseInt(document.getElementById("editMinutes").value) || 0;
   const seconds = parseInt(document.getElementById("editSeconds").value) || 0;
 
-  totalTime = remainingTime = hours * 3600 + minutes * 60 + seconds;
+  totalTime = remainingTime = Math.max(0, hours * 3600 + minutes * 60 + seconds); // Ensure no negative time
   displayTime(totalTime);
   closeEditModal();
 }
