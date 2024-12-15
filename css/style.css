@@ -26,12 +26,45 @@ body {
     padding: 0;
 }
 
+/* Header Container */
+.header-container {
+    position: relative; /* Position relative to allow absolute positioning of logos */
+    text-align: center;
+    padding: 40px; /* Ensure padding to accommodate logo spacing */
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: #f9f9f9; /* Text color */
+}
+
+/* Logo Left */
+.logo-left {
+    position: absolute;
+    top: 50%;
+    left: 60px;
+    transform: translateY(-70%);
+    width: 150px; /* Adjust logo size */
+    height: 150px;
+    opacity: 1; /* Transparency effect */
+}
+
+/* Logo Right */
+.logo-right {
+    position: absolute;
+    top: 50%;
+    right: 60px;
+    transform: translateY(-70%);
+    width: 150px; /* Adjust logo size */
+    height: 150px;
+    opacity: 1; /* Transparency effect */
+}
+
+
+
 /* Timer Display */
 #timer {
     font-family: 'clockicons', sans-serif; /* Use the clockicons font */
     font-size: 350px;
     color: orange; /* Default color */
-    margin: 50px 0;
+    margin: -50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,11 +79,11 @@ body {
 button {
     font-family: 'Orbitron', sans-serif; /* Cinematic font for buttons */
     padding: 10px 20px;
-    margin: 10px;
     font-size: 20px;
+    margin: 10px;
     border: none;
     cursor: pointer;
-    color: rgb(219, 214, 214);
+    color: rgb(228, 228, 228);
     border-radius: 20px;
 }
 
@@ -68,6 +101,10 @@ button {
 
 .pause {
     background-color: #f4433659;
+}
+
+.save {
+    background-color: #504c63;
 }
 
 button:hover {
@@ -88,7 +125,7 @@ button:hover {
 
 .modal-content {
     background-color: #333;
-    padding: 20px;
+    padding: 0px;
     width: 50%;
     margin: 10% auto;
     color: white;
@@ -96,7 +133,7 @@ button:hover {
 }
 
 .close {
-    color: white;
+    color: rgb(54, 54, 54);
     font-size: 30px;
     float: right;
     cursor: pointer;
