@@ -1,4 +1,3 @@
-// Timer Elements
 let timerDisplay = document.getElementById("timer");
 let countdown;
 let totalTime = 180; // Default time: 3 minutes
@@ -11,12 +10,6 @@ function displayTime(seconds) {
   const minutes = String(Math.floor(seconds / 60)).padStart(2, '0');
   const secs = String(seconds % 60).padStart(2, '0');
   timerDisplay.textContent = `${minutes}:${secs}`;
-
-  if (remainingTime <= 60) {
-    timerDisplay.classList.add('red'); // Add red styling for last minute
-  } else {
-    timerDisplay.classList.remove('red'); // Remove red styling when more than 1 minute
-  }
 }
 
 // Start Timer
@@ -29,15 +22,9 @@ function startTimer() {
       displayTime(remainingTime);
     } else {
       clearInterval(countdown);
-      playEndSound(); // Play the sound when the timer ends
+      // Remove alert or add custom behavior here if needed
     }
   }, 1000);
-}
-
-// Play Sound on Timer End
-function playEndSound() {
-  const endSound = document.getElementById("endSound");
-  endSound.play();
 }
 
 // Pause Timer
@@ -60,11 +47,6 @@ function resetTimer() {
   displayTime(totalTime);
   document.querySelector(".pause").textContent = "Pause";
   isPaused = false;
-
-  // Stop and reset the music
-  const endSound = document.getElementById("endSound");
-  endSound.pause(); // Pause the audio
-  endSound.currentTime = 0; // Reset playback to the beginning
 }
 
 // Open Edit Modal
@@ -83,7 +65,7 @@ function saveEdit() {
   const minutes = parseInt(document.getElementById("editMinutes").value) || 0;
   const seconds = parseInt(document.getElementById("editSeconds").value) || 0;
 
-  totalTime = remainingTime = Math.max(0, hours * 3600 + minutes * 60 + seconds); // Ensure no negative time
+  totalTime = remainingTime = hours * 3600 + minutes * 60 + seconds;
   displayTime(totalTime);
   closeEditModal();
 }
