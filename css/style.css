@@ -1,0 +1,122 @@
+/* Font Definition */
+@font-face {
+    font-family: 'clockicons';
+    src: url('../fonts/clockicons.woff2') format('woff2'),
+         url('../fonts/clockicons.woff') format('woff'),
+         url('../fonts/clockicons.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /* General Body Styling */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Timer Display */
+  #timer {
+    font-family: 'clockicons', sans-serif; /* Use the clockicons font */
+    font-size: 100px;
+    color: orange;
+    margin: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Buttons Styling */
+  button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .edit {
+    background-color: #2196f3;
+  }
+  
+  .reset {
+    background-color: #aa6f00;
+  }
+  
+  .start {
+    background-color: #4caf50;
+  }
+  
+  .pause {
+    background-color: #f44336;
+  }
+  
+  .save {
+    background-color: #4caf50;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  /* Modal Styling */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: #333;
+    padding: 20px;
+    width: 50%;
+    margin: 10% auto;
+    color: white;
+    border-radius: 10px;
+  }
+  
+  .close {
+    color: white;
+    font-size: 30px;
+    float: right;
+    cursor: pointer;
+  }
+  
+  .edit-fields {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+  
+  .edit-fields label,
+  .edit-fields input {
+    display: block;
+    margin: 10px;
+    text-align: left;
+  }
+  
+  input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .modal-buttons {
+    display: flex;
+    justify-content: space-around;
+  }
+  

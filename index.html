@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Timer</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="timer">03:00</div>
+  <button class="edit" onclick="openEditModal()">Edit</button>
+  <button class="reset" onclick="resetTimer()">Reset</button>
+  <button class="start" onclick="startTimer()">Start</button>
+  <button class="pause" onclick="pauseTimer()">Pause</button>
+
+  <!-- Edit Timer Modal -->
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeEditModal()">&times;</span>
+      <h2>Edit Timer</h2>
+      <div class="edit-fields">
+        <label>Hours</label>
+        <input type="number" id="editHours" min="0" value="0">
+
+        <label>Minutes</label>
+        <input type="number" id="editMinutes" min="0" max="59" value="3">
+
+        <label>Seconds</label>
+        <input type="number" id="editSeconds" min="0" max="59" value="0">
+      </div>
+      <div class="modal-buttons">
+        <button class="save" onclick="saveEdit()">Save</button>
+        <button class="reset" onclick="resetEdit()">Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
