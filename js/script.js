@@ -1,7 +1,7 @@
 // Timer Elements
 let timerDisplay = document.getElementById("timer");
 let countdown;
-let totalTime = 180; // Default time: 3 minutes
+let totalTime = 600; // Default time: 3 minutes
 let isPaused = false; // Timer pause state
 let remainingTime = totalTime;
 const editModal = document.getElementById("editModal");
@@ -77,7 +77,7 @@ function pauseTimer() {
 // Reset Timer
 function resetTimer() {
   clearInterval(countdown);
-  remainingTime = totalTime = 180; // Reset to 3 minutes
+  remainingTime = totalTime = 600; // Reset to 3 minutes
   displayTime(totalTime);
   document.querySelector(".pause").textContent = "Pause";
   isPaused = false;
