@@ -1,8 +1,8 @@
 @font-face {
     font-family: 'clockicons';
     src: url('../fonts/clockicons.woff2') format('woff2'),
-         url('../fonts/clockicons.woff') format('woff'),
-         url('../fonts/clockicons.ttf') format('truetype');
+        url('../fonts/clockicons.woff') format('woff'),
+        url('../fonts/clockicons.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -10,8 +10,8 @@
 @font-face {
     font-family: 'Orbitron';
     src: url('../fonts/Orbitron-Regular.woff2') format('woff2'),
-         url('../fonts/Orbitron-Regular.woff') format('woff'),
-         url('../fonts/Orbitron-Regular.ttf') format('truetype');
+        url('../fonts/Orbitron-Regular.woff') format('woff'),
+        url('../fonts/Orbitron-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -28,11 +28,15 @@ body {
 
 /* Header Container */
 .header-container {
-    position: relative; /* Position relative to allow absolute positioning of logos */
+    position: relative;
+    /* Position relative to allow absolute positioning of logos */
     text-align: center;
-    padding: 40px; /* Ensure padding to accommodate logo spacing */
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    color: #f9f9f9; /* Text color */
+    padding: 40px;
+    /* Ensure padding to accommodate logo spacing */
+    background: rgba(0, 0, 0, 0.7);
+    /* Semi-transparent background */
+    color: #f9f9f9;
+    /* Text color */
 }
 
 /* Logo Left */
@@ -41,9 +45,11 @@ body {
     top: 50%;
     left: 60px;
     transform: translateY(-70%);
-    width: 150px; /* Adjust logo size */
+    width: 150px;
+    /* Adjust logo size */
     height: 150px;
-    opacity: 1; /* Transparency effect */
+    opacity: 1;
+    /* Transparency effect */
 }
 
 /* Logo Right */
@@ -52,60 +58,67 @@ body {
     top: 50%;
     right: 60px;
     transform: translateY(-70%);
-    width: 150px; /* Adjust logo size */
+    width: 150px;
+    /* Adjust logo size */
     height: 150px;
-    opacity: 1; /* Transparency effect */
+    opacity: 1;
+    /* Transparency effect */
 }
 
 
 
 /* Timer Display */
 #timer {
-    font-family: 'clockicons', sans-serif; /* Use the clockicons font */
+    font-family: 'clockicons', sans-serif;
+    /* Use the clockicons font */
     font-size: 350px;
-    color: orange; /* Default color */
+    color: orange;
+    /* Default color */
     margin: -50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: color 0.5s, text-shadow 0.5s; /* Add transition for smooth color and shadow change */
+    transition: color 0.5s, text-shadow 0.5s;
+    /* Add transition for smooth color and shadow change */
 }
 
 #timer.red {
-    color: red; /* Change color to red when remaining time is less than 60 seconds */
+    color: red;
+    /* Change color to red when remaining time is less than 60 seconds */
 }
 
 /* Buttons Styling */
 button {
-    font-family: 'Orbitron', sans-serif; /* Cinematic font for buttons */
+    font-family: 'Orbitron', sans-serif;
+    /* Cinematic font for buttons */
     padding: 10px 20px;
     font-size: 20px;
     margin: 10px;
     border: none;
     cursor: pointer;
-    color: rgba(204, 201, 201, 0.11);
+    color: rgb(204, 201, 201);
     border-radius: 10px;
     letter-spacing: 2px;
 }
 
 .edit {
-    background-color: #2195f300;
+    background-color: #2195f357;
 }
 
 .reset {
-    background-color: #2195f300;
+    background-color: #2195f357;
 }
 
 .start {
-    background-color: #2195f300;
+    background-color: #2195f357;
 }
 
 .pause {
-    background-color: #2195f300;
+    background-color: #2195f357;
 }
 
 .save {
-    background-color: #000000cc;
+    background-color: #2195f357;
 }
 
 button:hover {
@@ -170,42 +183,59 @@ input[type="number"] {
 }
 
 .modal-buttons button {
-    width: 30%; /* Distribute buttons in modal evenly */
+    width: 30%;
+    /* Distribute buttons in modal evenly */
 }
 
 /* Header Styling */
 /* Header Styling with Animated Background Box */
 .highhead {
-    font-family: 'Orbitron', sans-serif; /* Robotic font */
-    font-size: 70px; /* Adjust size for prominence */
-    text-transform: uppercase; /* Ensure all caps */
-    color: #f9f9f9; /* Neutral white text */
+    font-family: 'Orbitron', sans-serif;
+    /* Robotic font */
+    font-size: 70px;
+    /* Adjust size for prominence */
+    text-transform: uppercase;
+    /* Ensure all caps */
+    color: #f9f9f9;
+    /* Neutral white text */
     background: linear-gradient(90deg, #10767a49, #75040441);
-    background-position: center; /* Position the gradient in the center */
+    background-position: center;
+    /* Position the gradient in the center */
     text-align: center;
     margin-top: 10px;
-    padding: 40px; /* Add padding to adjust height */
-    border-radius: 10px; /* Optional: add rounded corners */
+    padding: 40px;
+    /* Add padding to adjust height */
+    border-radius: 10px;
+    /* Optional: add rounded corners */
     height: 80px;
-    position: relative; /* To position the pseudo-element */
-    overflow: hidden; /* Clip any excess animation */
+    position: relative;
+    /* To position the pseudo-element */
+    overflow: hidden;
+    /* Clip any excess animation */
     letter-spacing: 3px;
 }
 
 /* Create Animated Outline Effect */
 .highhead::before {
-    content: ''; /* Empty content for pseudo-element */
-    position: absolute; /* Positioned relative to .highhead */
+    content: '';
+    /* Empty content for pseudo-element */
+    position: absolute;
+    /* Positioned relative to .highhead */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 10px; /* Match the border radius of .highhead */
-    background: linear-gradient(90deg, #0000ff34, #ff00003b); /* Rainbow-like gradient */
-    background-size: 300% 300%; /* Create a large gradient for animation */
-    animation: animate-outline 4s linear infinite; /* Infinite animation loop */
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.63); /* Add glow effect */
-    
+    border-radius: 10px;
+    /* Match the border radius of .highhead */
+    background: linear-gradient(90deg, #0000ff34, #ff00003b);
+    /* Rainbow-like gradient */
+    background-size: 300% 300%;
+    /* Create a large gradient for animation */
+    animation: animate-outline 4s linear infinite;
+    /* Infinite animation loop */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.63);
+    /* Add glow effect */
+
 }
 
 /* Keyframes for Gradient Animation */
@@ -213,9 +243,11 @@ input[type="number"] {
     0% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%;
     }
+
     100% {
         background-position: 0% 50%;
     }
@@ -225,77 +257,93 @@ input[type="number"] {
 /* Media Queries for responsive design */
 @media screen and (max-width: 1200px) {
     #timer {
-        font-size: 180px; /* Adjust font size for larger screens */
+        font-size: 180px;
+        /* Adjust font size for larger screens */
     }
 
     .highhead {
-        font-size: 60px; /* Adjust header size */
+        font-size: 60px;
+        /* Adjust header size */
         padding: 30px;
     }
 
     .modal-content {
-        width: 70%; /* Slightly reduce modal width */
+        width: 70%;
+        /* Slightly reduce modal width */
     }
 
     button {
-        width: 80%; /* Buttons take up more space */
+        width: 80%;
+        /* Buttons take up more space */
     }
 }
 
 @media screen and (max-width: 768px) {
     #timer {
-        font-size: 120px; /* Adjust font size for tablets */
+        font-size: 120px;
+        /* Adjust font size for tablets */
     }
 
     .highhead {
-        font-size: 50px; /* Adjust header size */
+        font-size: 50px;
+        /* Adjust header size */
         padding: 20px;
     }
 
     .modal-content {
-        width: 80%; /* Take full width for tablets */
+        width: 80%;
+        /* Take full width for tablets */
     }
 
     .edit-fields {
-        flex-direction: column; /* Stack inputs vertically */
+        flex-direction: column;
+        /* Stack inputs vertically */
         align-items: center;
     }
 
     input[type="number"] {
-        width: 80%; /* Full width for better usability */
+        width: 80%;
+        /* Full width for better usability */
     }
 
     button {
-        width: 90%; /* Button width for tablets and smaller screens */
+        width: 90%;
+        /* Button width for tablets and smaller screens */
         margin: 10px auto;
     }
 }
 
 @media screen and (max-width: 600px) {
     #timer {
-        font-size: 100px; /* Adjust font size for smartphones */
+        font-size: 100px;
+        /* Adjust font size for smartphones */
     }
 
     .highhead {
-        font-size: 40px; /* Adjust header size */
+        font-size: 40px;
+        /* Adjust header size */
         padding: 20px;
     }
 
     .modal-content {
-        width: 90%; /* Full width for smartphones */
+        width: 90%;
+        /* Full width for smartphones */
     }
 
     .edit-fields {
-        flex-direction: column; /* Stack inputs vertically */
+        flex-direction: column;
+        /* Stack inputs vertically */
         align-items: center;
     }
 
     input[type="number"] {
-        width: 80%; /* Full width for small screens */
+        width: 80%;
+        /* Full width for small screens */
     }
 
     button {
-        width: 80%; /* Adjust button width for small screens */
+        width: 80%;
+        /* Adjust button width for small screens */
         margin: 10px auto;
     }
 }

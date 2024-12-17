@@ -56,7 +56,7 @@ function pauseTimer() {
   if (!isPaused) {
     clearInterval(countdown);
     isPaused = true;
-    pauseButton.textContent = "*";
+    pauseButton.textContent = "Resume";
 
     // Pause the sound if it's playing
     if (!endSound.paused) {
@@ -65,7 +65,7 @@ function pauseTimer() {
   } else {
     isPaused = false;
     startTimer();
-    pauseButton.textContent = "*";
+    pauseButton.textContent = "Pause";
 
     // Resume the sound if it's during the last 10 seconds
     if (remainingTime <= 10) {
@@ -79,7 +79,7 @@ function resetTimer() {
   clearInterval(countdown);
   remainingTime = totalTime = 180; // Reset to 3 minutes
   displayTime(totalTime);
-  document.querySelector(".pause").textContent = "*";
+  document.querySelector(".pause").textContent = "Pause";
   isPaused = false;
 
   // Stop and reset the music

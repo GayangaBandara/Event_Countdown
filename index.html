@@ -1,93 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Countdown Timer</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <div class="header-container">
-    <p class="highhead animated-lethalbots">LETHALBOTS 2024</p>
-    <img src="image/logo.png" class="logo-left" alt="Left Logo">
-    <img src="image/logo.png" class="logo-right" alt="Right Logo">
-  </div>
+    <div class="header-container">
+        <p class="highhead animated-lethalbots">LETHALBOTS 2024</p>
+        <img src="image/logo.png" class="logo-left" alt="Left Logo">
+        <img src="image/logo.png" class="logo-right" alt="Right Logo">
+    </div>
 
-  <div id="timer">03:00</div><br><br>
+    <div id="timer">03:00</div><br><br>
 
-  <div class="my-slider-container">
-    <div class="monoslider" style="
+    <div class="my-slider-container">
+        <div class="monoslider" style="
             --width: 150px;
             --height: 150px;
             --quantity: 8;
         ">
-        <div class="mono">
-            <div class="monoitem" style="--position: 1">
-                <img src="image/sltccol.png" alt="" style="margin-top: -4px; height: 80px;" width="80px">
-            </div>
-            <div class="monoitem" style="--position: 2">
-                <img src="image/mediacol.png" alt="" style="height: 60px;">
-            </div>
-            <div class="monoitem" style="--position: 3">
-                <img src="image/venora.png" alt="" style="margin-top: -4px; height: 80px;" width="80px">
-            </div>
-            <div class="monoitem" style="--position: 4">
-                <img src="image/faclg.jpg" alt="" style="margin-top: -4px; height: 70px;" width="100px">
-            </div>
-            <div class="monoitem" style="--position: 5">
-                <img src="image/entec.jpg" alt=""  style="margin-top: -4px; height: 80px;" width="80px">
-            </div>
-            <div class="monoitem" style="--position: 6">
-                <img src="image/derana.png" alt=""  style="margin-top: -4px; height: 80px;" width="80px">
-            </div>
-            <div class="monoitem" style="--position: 7">
-                <img src="image/lokaya.png" alt="" style="margin-top: -4px; height: 90px;" width="90px">
-            </div>
-            <div class="monoitem" style="--position: 8">
-                <img src="image/sltlg.png" alt="" style="margin-top: -4px; height: 70px;" width="100px">
-            </div>
-        </div><br><br><br><br><br><br>
-        <button class="edit" onclick="openEditModal()">*</button>
-        <button class="reset" onclick="resetTimer()">*</button>
-        <button class="start" onclick="startTimer()">*</button>
-        <button class="pause" onclick="pauseTimer()">*</button>
-    </div>
+            <div class="mono">
+                <div class="monoitem" style="--position: 1">
+                    <img src="image/sltccol.png" alt="" style="margin-top: -4px; height: 80px;" width="80px">
+                </div>
+                <div class="monoitem" style="--position: 2">
+                    <img src="image/mediacol.png" alt="" style="height: 60px;">
+                </div>
+                <div class="monoitem" style="--position: 3">
+                    <img src="image/venora.png" alt="" style="margin-top: -4px; height: 80px;" width="80px">
+                </div>
+                <div class="monoitem" style="--position: 4">
+                    <img src="image/faclg.jpg" alt="" style="margin-top: -4px; height: 70px;" width="100px">
+                </div>
+                <div class="monoitem" style="--position: 5">
+                    <img src="image/entec.jpg" alt="" style="margin-top: -4px; height: 80px;" width="80px">
+                </div>
+                <div class="monoitem" style="--position: 6">
+                    <img src="image/derana.png" alt="" style="margin-top: -4px; height: 80px;" width="80px">
+                </div>
+                <div class="monoitem" style="--position: 7">
+                    <img src="image/lokaya.png" alt="" style="margin-top: -4px; height: 90px;" width="90px">
+                </div>
+                <div class="monoitem" style="--position: 8">
+                    <img src="image/sltlg.png" alt="" style="margin-top: -4px; height: 70px;" width="100px">
+                </div>
+            </div><br><br><br><br><br><br>
+            <button class="edit" onclick="openEditModal()">Edit</button>
+            <button class="reset" onclick="resetTimer()">Reset</button>
+            <button class="start" onclick="startTimer()">Start</button>
+            <button class="pause" onclick="pauseTimer()">Pause</button>
+        </div>
 
     </div>
 
 
 
 
-  <!-- Edit Timer Modal -->
-  <div id="editModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeEditModal()">&times;</span>
-      <h2>Edit Timer</h2>
-      <div class="edit-fields">
-        <label>Hours</label>
-        <input type="number" id="editHours" min="0" value="0">
+    <!-- Edit Timer Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditModal()">&times;</span>
+            <h2>Edit Timer</h2>
+            <div class="edit-fields">
+                <label>Hours</label>
+                <input type="number" id="editHours" min="0" value="0">
 
-        <label>Minutes</label>
-        <input type="number" id="editMinutes" min="0" max="59" value="3">
+                <label>Minutes</label>
+                <input type="number" id="editMinutes" min="0" max="59" value="3">
 
-        <label>Seconds</label>
-        <input type="number" id="editSeconds" min="0" max="59" value="0">
-      </div>
-      <div class="modal-buttons">
-        <button class="save" onclick="saveEdit()">Save</button>
-        <button class="reset" onclick="resetEdit()">Reset</button>
-      </div>
+                <label>Seconds</label>
+                <input type="number" id="editSeconds" min="0" max="59" value="0">
+            </div>
+            <div class="modal-buttons">
+                <button class="save" onclick="saveEdit()">Save</button>
+                <button class="reset" onclick="resetEdit()">Reset</button>
+            </div>
+        </div>
     </div>
-  </div>
-  <audio id="endSound" src="audio/10Sec.mp3" preload="auto"></audio>
-  <script src="js/script.js"></script>
- 
- <script>
-    // style.js
-    document.addEventListener("DOMContentLoaded", () => {
-        // Define only the necessary CSS for the monoslider
-        const css = `
+    <audio id="endSound" src="audio/10Sec.mp3" preload="auto"></audio>
+    <script src="js/script.js"></script>
+
+    <script>
+        // style.js
+        document.addEventListener("DOMContentLoaded", () => {
+            // Define only the necessary CSS for the monoslider
+            const css = `
 .monoslider {
     height: var(--height);
     margin: 0; /* Remove any margin that could affect layout */
@@ -139,15 +141,16 @@
 }
 `;
 
-        // Create a <style> element
-        const style = document.createElement('style');
-        style.type = 'text/css';
-        style.appendChild(document.createTextNode(css));
+            // Create a <style> element
+            const style = document.createElement('style');
+            style.type = 'text/css';
+            style.appendChild(document.createTextNode(css));
 
-        // Append <style> to the <head> section
-        document.head.appendChild(style);
-    });
+            // Append <style> to the <head> section
+            document.head.appendChild(style);
+        });
 
-</script>
+    </script>
 </body>
+
 </html>
